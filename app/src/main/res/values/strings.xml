@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">RScheme_interpreter</string>
+    <string-array name="scheme_quiz">
+        <item>1. display$Scheme에서 display 함수를 사용하여 \"Hello, World!\"를 출력하는 코드를 작성하세요.
+            \n\n출력값\nHello, World!
+            %(display expr)\nexpr: 출력하고자 하는 표현식
+            ^(display \"Hello, World!\")</item>
+        <item>2. newline$Scheme에서 display와 newline 함수를 사용하여 다음과 같이 두 줄로 출력하는 코드를 작성하세요.
+            \n\n출력값\nHello, World!\nWelcome to Scheme!
+            %두 번의 display 함수 호출 사이에 newline 함수를 사용해 보세요.
+            ^(display \"Hello, World!\")\n(newline)\n(display \"Welcome to Scheme!\")</item>
+        <item>3. define$Scheme에서 define 함수를 사용하여 변수 x를 10으로 정의하고, 변수 y를 20으로 정의한 다음, 두 변수의 합을 출력하는 코드를 작성하세요.
+            \n\n출력값\nx\ny\n30
+            %(define variable value)\nvariable: 변수의 이름을 나타내는 식별자\nvalue: 변수에 할당될 값 또는 표현식\n변수의 합은 (+ value-1 value-2) 표현식을 사용해 보세요.
+            ^(define x 10)\n(define y 20)\n(display (+ x y))</item>
+        <item>4. set!$Scheme에서 define과 set! 함수를 사용하여 변수 x를 10으로 정의하여 출력하고, 해당 변수의 값을 20으로 변경하여 새로운 값을 출력하는 코드를 작성하세요.
+            \n\n출력값\nx\n10\n20\n20
+            %(set! variable value)\nvariable: 이미 정의된 변수의 이름을 나타내는 식별자\nvalue: 변수에 새로 할당될 값 또는 표현식
+            ^(define x 10)\n(display x)\n(newline)\n(set! x 20)\n(display x) </item>
+        <item>5. if$Scheme에서 if 표현식을 사용하여 변수 a를 -5로 정의하고 변수 a가 양수, 음수 또는 0인지를 판별하고, 양수면 \"양수\", 음수면 \"음수\", 0이라면 \"0\"을 출력하는 코드를 작성하세요.
+            \n\n출력값\nx\n음수
+            %(if condition then-expression else-expression)\ncondition: 조건을 평가하는 표현식\nthen-expression: 조건이 참일 때 실행되는 표현식\nelse-expression: 조건이 거짓일 때 실행되는 표현식
+            \n변수의 크기 비교는 (&lt; value-1 value-2) 또는 (> value-1 value-2) 표현식을 사용해 보세요.
+            ^(define x -5)\n(if (> x 0)\n(display \"양수\")\n(if (&lt; x 0)\n(display \"음수\")\n(display \"0\")))</item>
+        <item>6. cond$Scheme에서 cond 표현식을 사용하여 변수 a를 -5로 정의하고 변수 a가 양수, 음수 또는 0인지를 판별하고, 양수면 \"양수\", 음수면 \"음수\", 0이라면 \"0\"을 출력하는 코드를 작성하세요.
+            \n\n출력값\nx\n음수
+            %(cond\n(condition-1 expression-1)\n(condition-2 expression-2)\n\.\.\.\n(else default-expression))
+            \ncondition: 조건을 평가하는 표현식\nexpression-n: 조건이 참일 때 실행되는 표현식\nelse: 모든 조건이 거짓인 경우 실행되는 표현식\ndefault-expression: 모든 조건이 거짓인 경우 실행되는 표현식
+            ^(define x -5)\n(cond\n((> x 0) (display \"양수\"))\n((&lt; x 0) (display \"음수\"))\n(else (display \"0\")))</item>
+        <item>7. list$Scheme에서 list 함수를 사용하여 숫자 1, 2, 3으로 구성된 리스트 numbers를 생성하여 출력하는 코드를 작성하세요.
+            \n\n출력값\nnumbers\n(1 2 3)
+            %(list expr-1 expr-2 \.\.\.)\nexpr-n: 리스트에 포함될 요소
+            ^(define numbers (list 1 2 3))\n(display numbers)</item>
+        <item>8. car$Scheme에서 list 함수를 사용하여 숫자 1, 2, 3으로 구성된 리스트 numbers를 생성하고, 리스트의 첫 번째 요소를 반환하여 출력하는 코드를 작성하세요.
+            \n\n출력값\nnumbers\n1
+            %(car lst)\nlst: 리스트
+            ^(define numbers (list 1 2 3))\n(display (car numbers))</item>
+        <item>9. cdr$Scheme에서 list 함수를 사용하여 숫자 1, 2, 3으로 구성된 리스트 numbers를 생성하고, 리스트의 첫 번째 요소를 제외한 나머지 부분을 반환하여 출력하는 코드를 작성하세요.
+            \n\n출력값\nnumbers\n(2 3)
+            %(cdr lst)\nlst: 리스트
+            ^(define numbers (list 1 2 3))\n(display (cdr numbers))</item>
+        <item>10. lambda$Scheme에서 lambda 함수를 사용하여 매개변수 x, y를 더하는 add 함수를 생성하고, 10, 20을 인수로 전달하여 결과값을 출력하는 코드를 작성하세요.
+            \n\n출력값\nadd\n30
+            %(lambda (parameters) body)\nparameters: 함수의 매개변수 목록\nbody: 함수가 수행할 표현식
+            ^(define add (lambda (x y) (+ x y)))\n(display (add 10 20))</item>
+        <item>11. let$Scheme에서 지역 변수 x, y를 10, 20으로 정의하고 두 지역 변수의 합과 곱을 계산하여 출력하는 코드를 작성하세요.
+            \n\n출력값\n30\n200
+            %(let ((variable-1 value-1)\n(variable-2 value-2)\n\.\.\.)\nbody)\nvariable-n: 변수 이름\nvalue-n: 변수들에 할당될 값 또는 표현식\nbody: 지역 변수가 유효한 범위 내에서 실행될 표현식
+            \n변수의 합은 (* value-1 value-2) 표현식을 사용해 보세요.
+            ^(let ((x 10)\n(y 20))\n(display (+ x y))\n(newline)\n(display (* x y)))</item>
+        <item>12. begin$Scheme에서 begin 표현식을 사용하여 변수 x를 20으로 정의하는 표현식, 변수 y를 10으로 정의하는 표현식, 두 변수의 차를 출력하는 표현식으로 세 개의 표현식을 순차적으로 평가하는 코드를 작성하세요.
+            \n\n출력값\n10
+            %(begin\nexpression-1\nexpression-2\n\.\.\.)\nexpression-n: 실행될 표현식변수의 차는 (- value-1 value-2) 표현식을 사용해 보세요.
+            ^(begin\n(define x 20)\n(define y 10)\n(- x y))</item>
+        <item>13. and$Scheme에서 and 표현식을 사용하여 변수 x, y, z 에 10, 20, 30을 정의하고 세 변수가 모두 양수인지 확인하여 모두 양수면 \"모두 양수\", 하나라도 0이나 음수가 있다면 \"0이나 음수가 포함\"을 출력하는 코드를 작성하세요.
+            \n\n출력값\nx\ny\nz\n모두 양수
+            %(and expression-1 expression-2 \.\.\.)\nexpression-n: 평가될 표현식
+            ^(define x 10)\n(define y 20)\n(define z 30)\n(if (and (> x 0) (> y 0) (> z 0))\n(display \"모두 양수\")\n(display \"0이나 음수가 포함\"))</item>
+        <item>14. or$Scheme에서 or 표현식을 사용하여 변수 x, y, z 에 10, -20, -30을 정의하고 세 변수에 양수가 있는지 확인하여 양수가 있다면 \"양수 포함\", 양수가 없다면 \"양수 미포함\"을 출력하는 코드를 작성하세요.
+            \n\n출력값\nx\ny\nz\n양수 포함
+            %(or expression-1 expression-2 \.\.\.)\nexpression-n: 평가될 표현식
+            ^(define x 10)\n(define y -20)\n(define z -30)\n(if (or (> x 0) (> y 0) (> z 0))\n(display \"양수 포함\")\n(display \"양수 미포함\"))</item>
+    </string-array>
+    <string name="display_">애정타임</string>
+</resources>

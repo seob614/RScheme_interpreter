@@ -1,0 +1,27 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+        //파이썬 추가
+        maven { url "https://chaquo.com/maven" }
+    }
+    //파이썬 추가
+    resolutionStrategy {
+        eachPlugin {
+            if (requested.id.id == "com.chaquo.python") {
+                useModule("com.chaquo.python:gradle:15.0.1")
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "RScheme_interpreter"
+include ':app'

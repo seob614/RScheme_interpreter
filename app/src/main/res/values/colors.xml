@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="gray_white">#fff7f7f7</color>
+    <color name="blue1">#ffeef2fb</color>
+    <color name="blue2">#ff31859b</color>
+    <color name="red">#ED1C24</color>
+    <color name="darkgreen">#ff336666</color>
+    <color name="list_bg0">#fff5f5f5</color>
+    <color name="list_bg2">#ffffffff</color>
+    <color name="product_list_tab_color">#ff87888c</color>
+    <color name="windows_color">#F5F5F5</color>
+</resources>
