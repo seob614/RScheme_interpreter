@@ -29,9 +29,9 @@ Scheme은 가능한 일반적이고 적은 수의 추상화 메커니즘을 기�
 Scheme 프로그래밍 모바일 앱을 통해 학생들이 컴퓨터 사고력을 향상할 수 있을 것으로 기대된다.
 
 ***
-
-![3_5_learn](https://github.com/seob614/RScheme_interpreter/assets/35085236/258e23c9-c965-46a4-9354-24bde9a9d1cc)
 ### 코드 작성 보조 도구
+![3_5_learn](https://github.com/seob614/RScheme_interpreter/assets/35085236/258e23c9-c965-46a4-9354-24bde9a9d1cc)
 
-![3_6_quiz00](https://github.com/seob614/RScheme_interpreter/assets/35085236/fff71292-0559-4774-9f88-c5eaaafcdaee)
 ### 학습 모드
+![3_6_quiz00](https://github.com/seob614/RScheme_interpreter/assets/35085236/fff71292-0559-4774-9f88-c5eaaafcdaee)
+
